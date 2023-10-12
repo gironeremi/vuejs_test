@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>test1 vueJS</title>
+    <style>
+      #truc {
+        width: 150px;
+        height: 150px;
+        background-color: #236309;
+        border-radius: 50%;
+        box-shadow: 10px 10px 20px #913131;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <h1>{{ title }}</h1>
+      <h2>{{ subtitle }}</h2>
+      <div v-if="isVisible" id="truc"></div>
+      <p>{{ 'Résultat du dé : ' + Math.ceil(Math.random()*6) }}</p>
+    </div>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script>
+      const app = Vue.createApp({
+        data() {
+          return {
+            title: "Salut, Vue!!",
+            subtitle: 'Vous allez bien?',
+            isVisible: true
+          }
+        }
+      })
+      app.mount('#app')
+    </script>
+  </body>
+</html>
